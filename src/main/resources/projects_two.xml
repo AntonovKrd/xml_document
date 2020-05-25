@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <projects>
     <project name="xml">
-        <member role="developer" name="Fedya"/>
+        <member role="developer" name="fedya"/>
         <member role="manager" name="Ivan"/>
-        <member role="manager" name="Fedya"/>
+    </project>
+    <project name="rpc">
+        <member role="developer" name="fedya"/>
     </project>
 </projects>

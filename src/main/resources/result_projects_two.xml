@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<members>
+    <member name="fedya">
+        <roles name="developer" project="xml"/>
+        <roles name="developer" project="rpc"/>
+    </member>
+    <member name="Ivan">
+        <roles name="manager" project="xml"/>
+    </member>
+</members>

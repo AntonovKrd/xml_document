@@ -9,14 +9,14 @@ import java.util.List;
 public class Members {
 
     @XmlElement
-    private List<Member> members = new ArrayList<>();
+    private List<Member> member = new ArrayList<>();
 
     public List<Member> getMembers() {
-        return members;
+        return member;
     }
 
     public void setMembers(List<Member> members) {
-        this.members = members;
+        this.member = members;
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
@@ -55,5 +55,21 @@ public class Members {
 
         @XmlAttribute
         private String project;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getProject() {
+            return project;
+        }
+
+        public void setProject(String project) {
+            this.project = project;
+        }
     }
 }
