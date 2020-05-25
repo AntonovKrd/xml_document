@@ -8,6 +8,5 @@ public interface Parser {
     @SuppressWarnings("rawtypes")
     Object getObject(File file, Class clazz) throws JAXBException;
 
-    @SuppressWarnings("rawtypes")
-    void saveObject(File file, Class clazz) throws JAXBException;
+    void saveObject(File file, Object obj) throws JAXBException;
 }
