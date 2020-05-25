@@ -24,6 +24,7 @@ public class JaxbParser implements Parser {
     public void saveObject(File file, Object obj) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(obj.getClass());
         Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         marshaller.marshal(obj, file);
         logger.info("object" + obj.getClass().getSimpleName() + " is saved to " + file.getAbsolutePath());
     }
