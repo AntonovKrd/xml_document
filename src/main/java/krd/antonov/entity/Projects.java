@@ -5,9 +5,11 @@ import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name = "projects")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Projects {
 
     @XmlElement(name = "project")
+    @XmlElementWrapper
     private List<Project> projects;
 
     public List<Project> getProjects() {
