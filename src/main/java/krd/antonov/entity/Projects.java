@@ -9,7 +9,6 @@ import java.util.List;
 public class Projects {
 
     @XmlElement(name = "project")
-    @XmlElementWrapper
     private List<Project> projects;
 
     public List<Project> getProjects() {
@@ -18,6 +17,17 @@ public class Projects {
 
     public void setProjects(List<Project> projects) {
         this.projects = projects;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        if (projects != null && !projects.isEmpty()){
+            projects.forEach(project -> builder.append(project.toString()));
+        }
+        return "Projects{" +
+                "projects=" + builder.toString() +
+                '}';
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
@@ -43,6 +53,18 @@ public class Projects {
 
         public void setMembers(List<Member> members) {
             this.members = members;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            if (this.members != null && !this.members.isEmpty()){
+                this.members.forEach(member -> builder.append(member.toString()).append(System.lineSeparator()));
+            }
+            return "Project{" +
+                    "name='" + name + '\'' +
+                    ", members=" + builder.toString() +
+                    '}';
         }
     }
 
@@ -70,6 +92,14 @@ public class Projects {
 
         public void setRole(String role) {
             this.role = role;
+        }
+
+        @Override
+        public String toString() {
+            return "Member{" +
+                    "name='" + name + '\'' +
+                    ", role='" + role + '\'' +
+                    '}';
         }
     }
 }

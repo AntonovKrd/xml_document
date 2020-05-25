@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <projects>
-    <projects>
-        <project name="test">
-            <member role="developer" name="Vladimir"/>
-            <member role="Analyst" name="Aleksandr"/>
-        </project>
-    </projects>
+    <project name="test">
+        <member role="developer" name="Vladimir"/>
+        <member role="Analyst" name="Aleksandr"/>
+    </project>
 </projects>
