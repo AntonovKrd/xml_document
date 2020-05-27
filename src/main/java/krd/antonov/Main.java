@@ -5,6 +5,7 @@ import krd.antonov.entity.Members;
 import krd.antonov.entity.Projects;
 import krd.antonov.parser.Parser;
 import krd.antonov.parser.impl.JaxbParser;
+import krd.antonov.utility.Utility;
 import org.apache.log4j.Logger;
 
 import javax.xml.bind.JAXBException;
@@ -27,18 +28,20 @@ public class Main {
         if (projects != null) {
             Members members = new Members();
             members.setMembers(getMembersList(projects));
+            Utility.sortMembers(members);
             writeResultXml(parser, members, RESULT_PROJECTS);
         }
         Projects projects_two = readTaskXml(parser, FILE_PROJECTS_TWO);
         if (projects_two != null) {
             Members members = new Members();
             members.setMembers(getMembersList(projects_two));
+            Utility.sortMembers(members);
             writeResultXml(parser, members, RESULT_PROJECTS_TWO);
         }
     }
 
     @Nullable
-    public static Projects readTaskXml(Parser parser, String fileName) {
+    private static Projects readTaskXml(Parser parser, String fileName) {
         File projectsFile = new File(Objects.requireNonNull(Main.class.getClassLoader().getResource(fileName)).getFile());
         Projects projects = null;
         if (projectsFile.canRead()) {
