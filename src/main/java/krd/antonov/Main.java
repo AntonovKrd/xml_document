@@ -1,6 +1,5 @@
 package krd.antonov;
 
-import com.sun.istack.internal.Nullable;
 import krd.antonov.entity.Members;
 import krd.antonov.entity.Projects;
 import krd.antonov.parser.Parser;
@@ -40,7 +39,6 @@ public class Main {
         }
     }
 
-    @Nullable
     private static Projects readTaskXml(Parser parser, String fileName) {
         File projectsFile = new File(Objects.requireNonNull(Main.class.getClassLoader().getResource(fileName)).getFile());
         Projects projects = null;
